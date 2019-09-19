@@ -1,9 +1,30 @@
+
+go web编程
+https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/preface.md
+
+go 相关电子书
+https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books-zh.md#golang
+
+
+---
+
 go 是一门编译型语言，
 
 将源代码和依赖一起打包，进行静态编译生成本地指令
 
-
 go的代码是通过package 来组织的
+
+
+
+--- 
+
+& 仅用于生成其操作数对应的地址，也就是用于生成指针
+* 会出现在两个内容上：
+一个是类型， * Type 这样的格式代表了一个指针类型
+一个是指针， * Pointer 这样的格式用于获取指针所对应的基本值
+
+
+---
 
 
 
