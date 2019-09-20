@@ -10,7 +10,6 @@ func intSeq() func() int { // 1
 		return i
 	}
 }
-
 func main() {
 	fmt.Println("闭包")
 	nextInt := intSeq() // 3

@@ -13,7 +13,8 @@ a-z A-Z 0-9  下划线_
 类型：
 布尔、整型、字符串、派生类型
 
-	派生类型：指针类型（Pointer）、数组、结构化（struct）、Channel、函数、切片、接口、Map
+
+派生类型：指针类型（Pointer）、数组、结构化（struct）、Channel、函数、切片、接口、Map
 
 
 */
@@ -53,8 +54,8 @@ func main() {
 	var arr2 = []int{1, 2, 3}
 	arr2[1] = 1
 
-	var a int = 20 /* 声明实际变量 */
-	var ip *int    /* 声明指针变量 */
+	var a = 20  /* 声明实际变量 */
+	var ip *int /* 声明指针变量 */
 
 	ip = &a /* 指针变量的存储地址 */
 
