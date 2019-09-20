@@ -11,6 +11,8 @@ k v 形式
 
 lookup := make(map[string]int, 100)
 
+编译映射并不是有序的。每次遍历映射时，返回的键值对都是随机的顺序。
+
 */
 func main() {
 	lookup := make(map[string]int)
@@ -22,4 +24,9 @@ func main() {
 
 	total := len(lookup) // 获取长度
 	fmt.Println(total)
+
+	lookup = map[string]int{
+		"goku":  9001,
+		"gohan": 2044,
+	}
 }

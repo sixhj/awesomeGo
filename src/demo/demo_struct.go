@@ -12,7 +12,7 @@ func main() {
 	var a = Apple{name: "liu", age: 0}
 	fmt.Println(a)
 
-	b := Apple{name: "hua", age: 2}
+	b := Apple{name: "h", age: 2}
 	fmt.Println(b)
 
 	//testVar()
@@ -31,7 +31,7 @@ func main() {
 	aa.addAge3() // +3
 	fmt.Println("addAge3\t\t\t", a)
 
-	apple2 := getApple("jian", 1)
+	apple2 := getApple("j", 1)
 	fmt.Println(apple2)
 
 	/* 2019-09-19 liu

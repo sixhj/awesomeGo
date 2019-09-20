@@ -8,6 +8,8 @@ func [* Type] funcName(var1 ,var2 type) (type1,type2)
 
 func (s *Apple) addAge3() { // 方法和结构体 结合
 
+if语句中定义并初始化的值在if语句之外是不可用的，但是可以在else if和else语句中使用
+
 */
 
 func main() {
