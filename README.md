@@ -12,7 +12,7 @@ https://github.com/EbookFoundation/free-programming-books/blob/master/free-progr
 ---
 
 
-go 是一门编译型语言，
+go 是一门编译型语言，静态类型语言
 
 将源代码和依赖一起打包，进行静态编译生成本地指令
 

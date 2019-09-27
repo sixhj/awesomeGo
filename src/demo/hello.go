@@ -17,6 +17,8 @@ a-z A-Z 0-9  下划线_
 派生类型：指针类型（Pointer）、数组、结构化（struct）、Channel、函数、切片、接口、Map
 
 
+支持 goto
+
 */
 
 var g = 1 //  全局变量
@@ -59,7 +61,7 @@ func main() {
 
 	ip = &a /* 指针变量的存储地址 */
 
-	fmt.Printf("ip 变量储存的指针地址: %x\n", ip)
+	fmt.Println("ip 变量储存的指针地址: %x\n", ip)
 	/* 2019-09-19 liu
 	   当一个指针被定义后没有分配到任何变量时，它的值为 nil。
 
@@ -86,28 +88,51 @@ func main() {
 	countryCapitalMap["Japan"] = "东京"
 	countryCapitalMap["India "] = "新德里"
 
+	//testFor()
+
+	if 1 > 2 {
+		fmt.Println("???")
+	} else if 2 > 1 {
+
+	} else {
+		fmt.Println(1)
+	}
+
+}
+
+func testSwitch() {
+	switch i {
+	case 1:
+		fmt.Println(1)
+		//fallthrough   会执行下一个case
+	case 2:
+		fmt.Println(2)
+
+	default:
+		fmt.Println(3)
+	}
+
+}
+
+func testFor() {
 	i := 1
 	for i <= 3 {
 		fmt.Println(i)
 		i = i + 1
 	}
-
 	for j := 7; j <= 9; j++ {
 		fmt.Println(j)
 	}
-
 	for {
 		fmt.Println("loop")
 		break
 	}
-
 	for n := 0; n <= 5; n++ {
 		if n%2 == 0 {
 			continue
 		}
 		fmt.Println(n)
 	}
-
 }
 
 // func 方法名（参数。。。 类型）返回值类型 {
