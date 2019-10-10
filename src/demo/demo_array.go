@@ -24,19 +24,19 @@ func main() {
 }
 
 func f1() {
-	var scores [10]int
-	scores[0] = 339
+	var scores [10]int // 声明 长度为10的int型数组
+	scores[0] = 339    //第0个元素赋值
 	fmt.Println(scores[0])
 	fmt.Println(scores)
 	fmt.Println("hello")
-	scores2 := [4]int{9001, 9333, 212, 33}
-	for index, value := range scores2 {
+	scores2 := [4]int{9001, 9333, 212, 33} // 声明长度4 的int 数组 同时赋值
+	for index, value := range scores2 {    // 遍历数组
 		fmt.Println(index, value)
 	}
 	/* 2019-09-19 liu
 	切片是一个轻量级的结构体封装，这个结构体被封装后，代表一个数组的一部分
 	*/
-	scores3 := []int{1, 4, 293, 4, 9}
+	scores3 := []int{1, 4, 293, 4, 9} // 不定长度的数组
 	fmt.Println(scores3)
 	scores4 := make([]int, 10)
 	//创建一个切片不仅仅是分配一段内存（new只能分配一段内存）

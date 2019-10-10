@@ -28,6 +28,8 @@ func main() {
 
 	map1 = map[int]string{1: "map"} // 初始化
 
+	map1[2] = "two"
+
 	fmt.Println(map1)
 
 	strings := make(map[int]string) // 使用make 初始化一个map

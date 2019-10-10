@@ -2,7 +2,12 @@ package main
 
 import "fmt"
 
+// var name type  =  expression
+// name := expression     name 的类型由 expression 决定
+var age int = 1
 var stra = "hello 你好"
+
+var aa, b = 1, 2
 
 var ( // var () 定义一组变量
 	i int
@@ -12,13 +17,22 @@ var ( // var () 定义一组变量
 
 func main() {
 
+	ints := [...]int{1, 2, 3} // 1、整型数组
+	ints = [3]int{1, 2, 3}    // 2、整型数组
+
+	for key, value := range ints {
+		fmt.Println("key = ", key, "value = ", value)
+	}
+
+	fmt.Println("--------1008")
+
 	l := len(stra)
 	fmt.Println("len(stra)", l)
 	for i := 0; i < l; i++ {
 		fmt.Println(i, stra[i])
 	}
 
-	fmt.Println("--------")
+	fmt.Println("----1008----")
 
 	i = 11
 	s = "six"
@@ -70,8 +84,9 @@ func nine() {
 
 func testString() {
 	stra := "the spice must flow"
-	byts := []byte(stra)
+	byts := []byte(stra) //字符串数组
 	strb := string(byts)
+
 	fmt.Println(byts)
 	fmt.Println(strb)
 	print(stra)

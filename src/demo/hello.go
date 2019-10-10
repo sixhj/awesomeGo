@@ -16,7 +16,6 @@ a-z A-Z 0-9  下划线_
 
 派生类型：指针类型（Pointer）、数组、结构化（struct）、Channel、函数、切片、接口、Map
 
-
 支持 goto
 
 */
@@ -72,24 +71,37 @@ func main() {
 	   一个指针变量通常缩写为 ptr。
 	*/
 
+	//testStruct()
+
+	//testMap()
+
+	//testFor()
+
+	//testIf()
+
+}
+
+func testMap() {
+	var countryCapitalMap map[string]string // [key] value
+	/*创建集合 */
+	countryCapitalMap = make(map[string]string)
+	/* map插入key - value对,各个国家对应的首都 */
+	countryCapitalMap["France"] = "巴黎"
+	countryCapitalMap["Italy"] = "罗马"
+	countryCapitalMap["Japan"] = "东京"
+	countryCapitalMap["India "] = "新德里"
+}
+
+func testStruct() {
 	type Apple struct {
 		name    string
 		size    int
 		color   string
 		address string
 	}
+}
 
-	var countryCapitalMap map[string]string /*创建集合 */
-	countryCapitalMap = make(map[string]string)
-
-	/* map插入key - value对,各个国家对应的首都 */
-	countryCapitalMap["France"] = "巴黎"
-	countryCapitalMap["Italy"] = "罗马"
-	countryCapitalMap["Japan"] = "东京"
-	countryCapitalMap["India "] = "新德里"
-
-	//testFor()
-
+func testIf() {
 	if 1 > 2 {
 		fmt.Println("???")
 	} else if 2 > 1 {
@@ -97,7 +109,6 @@ func main() {
 	} else {
 		fmt.Println(1)
 	}
-
 }
 
 func testSwitch() {
