@@ -98,7 +98,7 @@ func testString() {
 	print("asdf你好")
 }
 
-func print(stra string) {
+func printString(stra string) {
 
 	for key, value := range stra {
 		fmt.Println(key, value)

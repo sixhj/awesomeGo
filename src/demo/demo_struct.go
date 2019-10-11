@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 type Apple struct {
 	name string
@@ -8,6 +11,20 @@ type Apple struct {
 }
 
 func main() {
+
+	type Point struct{ X, Y int }
+	p := Point{1, 2}
+	fmt.Println(p)
+
+	p2 := Point{X: 3, Y: 4}
+	fmt.Println(p2)
+
+	type address struct {
+		hostname string
+		port     int
+	}
+
+	fmt.Println("---------")
 
 	var a = Apple{name: "liu", age: 0}
 	fmt.Println(a)
@@ -101,4 +118,25 @@ func getCar() {
 	}
 	fmt.Println(car)
 
+}
+
+func testEmployee() {
+	type Employee struct {
+		Id        int
+		Name      string
+		Address   string
+		Dob       time.Time
+		Position  string
+		Salary    int
+		ManagerId int
+	}
+	var one Employee
+	one.Id = 1
+	oa := &one.Address
+	*oa = "zhengzhou"
+	fmt.Println(one)
+
+	two := &one
+	(*two).Name = "two"
+	fmt.Println(*two)
 }
