@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"time"
+)
+
 /* 2019-09-20 liu
 接口是一种类型，它只定义了声明，没有具体实现
 */
@@ -27,3 +32,73 @@ func addInterface(a interface{}, b interface{}) interface{} {
 
 //将一个空接口变量转换成一个指定的类型，你可以使用.(TYPE):
 //return a.(int) + b.(int)
+
+type Dog interface {
+	 eat()
+}
+
+type Cat interface {
+	//eat()
+}
+
+type Animal interface {
+	//Dog
+	//Cat  如果内嵌结构中拥有两个相同的方法名会报错
+}
+
+type Artifact interface {
+	Title() string
+	Creators() []string
+	Created()  time.Time
+}
+
+type Text interface {
+	Pages() int
+	Words() int
+	PageSize() int
+}
+// 从具体类型触发、提取其共享而得出的每一种分组方式都可以表示为一种接口类型。
+
+
+type Humaner interface {
+	SayHi()
+}
+
+type Student struct {
+	name string
+	id int
+}
+
+func (tmp *Student) SayHi()  {
+	fmt.Printf("Student%s %d sayhi\n", tmp.name, tmp.id)
+}
+
+type Teacher struct {
+	group string
+	addr string
+}
+
+func (tmp *Teacher) SayHi()  {
+	fmt.Printf("Teacher%s %s sayhi\n", tmp.group, tmp.addr)
+}
+
+type MyStr string
+
+func (tmp *MyStr) SayHi()  {
+	fmt.Printf("MyStr %s sayhi", *tmp)
+}
+
+func main() {
+	//定义接口类型的变量
+	var i Humaner  // 定义一个接口变量
+	//只是实现了此接口方法的类型，那么这个类型的变量（接收者类型）就可以给i赋值
+	s := &Student{"mike", 1}
+	i = s
+	i.SayHi()
+	t := &Teacher{"mike", "NJ"}
+	i = t
+	i.SayHi()
+	var str MyStr = "hello mike"
+	i = &str
+	i.SayHi()
+}

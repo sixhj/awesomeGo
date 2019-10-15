@@ -56,7 +56,24 @@ func main() {
 	fmt.Println(sumProduct(2, 3))
 	fmt.Println(sums(1, 2, 3))
 
+
 }
+
+func testDefer() {
+	x := 1
+	y := 2
+	defer fmt.Println(" x = ", x)
+	// defer 标识的 先不执行 ，
+	// 但是相关的值的副本同时放入栈中，
+	// 后面再改变该值时，该值副本不受影响
+	defer fmt.Println("y = ", y)
+	// 先输出y， defer 是一个栈的结构
+	fmt.Println(add(x, y))
+	// 先执行，等到函数执行完毕之后，
+	// 然后再执行defer 表示的函数，
+	// defer的方法都放入到一个栈中，
+}
+
 
 func add(a, b int) int {
 	return a + b

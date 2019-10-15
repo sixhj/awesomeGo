@@ -7,6 +7,9 @@ import "fmt"
 var age int = 1
 var stra = "hello 你好"
 
+
+var xxx int  // 声明变量
+
 var aa, b = 1, 2
 
 var ( // var () 定义一组变量
@@ -16,6 +19,27 @@ var ( // var () 定义一组变量
 )
 
 func main() {
+
+
+	 var b1 byte = 'a' // 97
+	 fmt.Println(b1)
+	 fmt.Printf("b1 = %c",b1)
+	 fmt.Println()
+
+	var b2  = "啊"
+	fmt.Println(b2)
+	fmt.Printf("%T",b2) //string
+	fmt.Println()
+
+	var b3 = '啊'
+	fmt.Printf(string(b3))
+	fmt.Println()
+	fmt.Printf("%T",b3) //int 32
+
+
+	fmt.Println("2019-10-13--------")
+
+	xxx = 1 // 变量赋值
 
 	ints := [...]int{1, 2, 3} // 1、整型数组
 	ints = [3]int{1, 2, 3}    // 2、整型数组
