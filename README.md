@@ -144,8 +144,14 @@ go工具会在调用编译器前将go文件排序
 
 # 整数
 
+不能隐式转换，需要显示的转换
+
+大类型向小类型转换时，不会报错，会溢出，
+
 - 有符号整数：int8    int16   int32   int64 
 - 无符号整数：uint8   uint16  uint32  uint64
+
+声明变量默认的是int类型  fmt.Printf    %T 可以查看该变量的类型，  unsafe.Sizeof 查看变量的占用字节数
 
 rune类型是int32类型的同义词，指明一个值是unicode码
 
