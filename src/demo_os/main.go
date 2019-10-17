@@ -14,5 +14,6 @@ func main() {
 	for k, v := range env {
 		fmt.Println(k, v)
 	}
-	os.FileMode
+	fmt.Println("", os.Chdir("/tmp"))
+	fmt.Println()
 }
