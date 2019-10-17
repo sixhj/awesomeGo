@@ -38,7 +38,7 @@ func osTest() {
 	)
 	dir, err := os.Getwd()
 	if err == nil {
-		fmt.Println(dir) ///Users/liuhuajian/go/src/awesomeProject
+		fmt.Println(dir) ///Users/liuhuajian/go/src/awesomeGo
 	}
 	split := strings.Split(string(dir), "/")
 	for key, value := range split {
@@ -50,7 +50,7 @@ func osTest() {
 	2 liuhuajian
 	3 go
 	4 src
-	5 awesomeProject
+	5 awesomeGo
 	*/
 }
 

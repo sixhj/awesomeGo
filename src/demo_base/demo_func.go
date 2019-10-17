@@ -56,7 +56,6 @@ func main() {
 	fmt.Println(sumProduct(2, 3))
 	fmt.Println(sums(1, 2, 3))
 
-
 }
 
 func testDefer() {
@@ -73,7 +72,6 @@ func testDefer() {
 	// 然后再执行defer 表示的函数，
 	// defer的方法都放入到一个栈中，
 }
-
 
 func add(a, b int) int {
 	return a + b

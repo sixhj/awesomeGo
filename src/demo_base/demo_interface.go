@@ -34,7 +34,7 @@ func addInterface(a interface{}, b interface{}) interface{} {
 //return a.(int) + b.(int)
 
 type Dog interface {
-	 eat()
+	eat()
 }
 
 type Cat interface {
@@ -49,7 +49,7 @@ type Animal interface {
 type Artifact interface {
 	Title() string
 	Creators() []string
-	Created()  time.Time
+	Created() time.Time
 }
 
 type Text interface {
@@ -57,8 +57,8 @@ type Text interface {
 	Words() int
 	PageSize() int
 }
-// 从具体类型触发、提取其共享而得出的每一种分组方式都可以表示为一种接口类型。
 
+// 从具体类型触发、提取其共享而得出的每一种分组方式都可以表示为一种接口类型。
 
 type Humaner interface {
 	SayHi()
@@ -66,31 +66,31 @@ type Humaner interface {
 
 type Student struct {
 	name string
-	id int
+	id   int
 }
 
-func (tmp *Student) SayHi()  {
+func (tmp *Student) SayHi() {
 	fmt.Printf("Student%s %d sayhi\n", tmp.name, tmp.id)
 }
 
 type Teacher struct {
 	group string
-	addr string
+	addr  string
 }
 
-func (tmp *Teacher) SayHi()  {
+func (tmp *Teacher) SayHi() {
 	fmt.Printf("Teacher%s %s sayhi\n", tmp.group, tmp.addr)
 }
 
 type MyStr string
 
-func (tmp *MyStr) SayHi()  {
+func (tmp *MyStr) SayHi() {
 	fmt.Printf("MyStr %s sayhi", *tmp)
 }
 
 func main() {
 	//定义接口类型的变量
-	var i Humaner  // 定义一个接口变量
+	var i Humaner // 定义一个接口变量
 	//只是实现了此接口方法的类型，那么这个类型的变量（接收者类型）就可以给i赋值
 	s := &Student{"mike", 1}
 	i = s

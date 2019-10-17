@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println(" os demo")
+	fmt.Println(" os demo_base")
 	name, _ := os.Hostname()
 	fmt.Println(name)
 	s, _ := os.UserHomeDir()
