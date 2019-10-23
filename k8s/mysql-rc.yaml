@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ReplicationController # 副本控制器  表明资源对象的类型
+metadata:
+  name: mysql # RC的名称 全局唯一
+spec:  # RC的相关定义 
+  replicas: 1 # pod副本期待数量
+  selector:
+    app: mysql  # 符合目标的Pod拥有此标签
+  template: # 根据此模版创建pod的副本（实例）
+    metadata:
+      name: mysql
+      labels: # 指定pod的标签 == 8:的selector
+        app: mysql #pod副本拥有的标签，对应RC的selector
+    spec:
+      containers:
+        - name: mysql #容器名称
+          image: mysql # 镜像名称
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "root"
+
+
+# kubectl get rc  查看创建的rc
+# kubectl get pods    查看pods 创建时的情况
+# kubectl get svc  查看刚刚产检的service ，可以通过CLUSTER-IP 来访问
+
+#CLUSTER-IP  是service创建后由k8s系统自动分配的，k8s巧妙的使用linux环境变量来解决这个问题
+# 根据service的唯一名字，容器可以从环境变量中获取到service对应的CLUSTER-IP 和端口号

@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 1 # 期望的副本数量
+  selector:
+    matchLabels:
+      tier: frontend
+    matchExpressions:
+      - {key:tier, operator: In,  values:[frontend]}
+  template:
+    metadata:
+      labels:
+        app: app-demo
+        tier:frontend
+    spec:
+      containers:
+        - name: tomcat-demo
+          image: tomcat
+          imagePullPolicy: IfNotPresent
+            # resources:
+            # limits:
+            # memory: "128Mi"
+          # cpu: "500m"
+          ports:
+            - containerPort: 8080

@@ -543,5 +543,3 @@ func (t *T )MethodName(T t1,replyType *t2) error
 
 
 go中的协程可能参考了libtask
-
- 

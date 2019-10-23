@@ -8,8 +8,6 @@ import (
 
 func main() {
 
-	testRedis()
-
 }
 
 func testRedis() {
