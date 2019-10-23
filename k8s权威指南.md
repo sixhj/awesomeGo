@@ -487,17 +487,60 @@ service的clusterIP地址做一个dns域名映射就可以解决服务发现的�
 三种ip
 - Node IP ；node 节点的IP地址，每个节点的物理网卡的IP地址，所有属于这个网络的服务器之间都能通过这个网络直接通信，
 - pod IP ：是docker 根据docker0网桥的IP地址段进行分配的，通常是一个虚拟的二层网络，真实的tcp/ip流量则是通过node ip所在的物理网卡流出
-- Cluster IP ：
-service的ip，虚拟ip
+- Cluster IP ：service的ip，虚拟ip。
+   
+  
+Cluster Ip 仅仅作用于service对象，并由k8s管理和分配IP地址
 
+Cluster IP 无法被ping ，因为没有一个实体网络对象来响应
 
+CLuster IP 只能结合Service Port 组成一个具体的通信端口，单独的ClusterIp 不具备tcp/ip通信的基础，并且它们属于k8s这样一个封闭的空间，
 
+ks集群内，Node IP  、Pod IP 、 Cluster Ip 网之间的通信，采用的是ks自己设计的一种编程方式的特殊的路由规则，与现有的ip路由有很大的不同
+
+myweb-svc.yaml  
+
+通过 type：NodePort 手动指定端口，然后http://<nodePort IP >:nodePort  进行访问
 
 
 ## volume 
+volume 是pod中能够被多个容器访问的共享目录，
+
+volume定义在pod上，然后被一个pod里的多个容器挂载到具体的文件目录下
+
+生命周期与pod相公，但与容器的生命周期不相关，容器终止或者重启volume中的数据也不会丢失
+
+- emptyDir：是pod分配到node时创建的，临时空间
+- hostPath：挂载宿主机上的文件或目录，永久保存，
+- gcePersistentDisk：表示使用谷歌公有云提供的永久磁盘
+- awsElasticBlockStore：亚马逊公有云
+- NFS：网络文件系统提供的共享目录存储数据时，在系统中部署一个nfs server
+
+
+
+
+
 ## Persistent Volume
+可以理解成ks集群中的某个网络存储中对应的一块存储
+- 只能是网络存储，不属于任何node，但可以在每个node上访问
+- 独立于pod之外定义
+
+
+pv状态
+
+- Available：空闲状态
+- Bound：已经绑定到某个pvc上
+- Released：对应的pvc已经删除，但资源还没有被集群收回
+- Failed：pv自动回收失败
+
 ## Namespace
+
+实现多租户的资源隔离
+
 ## Annotation
+与label类似，也使用k/v键值对的形式进行定义，
+
+定义的是ks对象的元数据Metadata，并且用于Label Selector
 
 
 
