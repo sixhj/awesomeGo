@@ -3,6 +3,7 @@ apiVersion: v1
 metadata:
   name:  myweb
 spec:
+  replicas: 0
   selector:
     app:  myweb
   type:  NodePort # 外网访问模式

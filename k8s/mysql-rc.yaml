@@ -3,7 +3,7 @@ kind: ReplicationController # 副本控制器  表明资源对象的类型
 metadata:
   name: mysql # RC的名称 全局唯一
 spec:  # RC的相关定义 
-  replicas: 1 # pod副本期待数量
+  replicas: 0 # pod副本期待数量
   selector:
     app: mysql  # 符合目标的Pod拥有此标签
   template: # 根据此模版创建pod的副本（实例）
