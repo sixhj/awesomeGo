@@ -43,7 +43,8 @@ type MathUtil struct {
 func (m *MathUtil) Count(req int, res *int) error {
 	// 服务
 	fmt.Println("服务被调用")
-	*res = req + req
+	add = req + req
+	res = &add // 返回的是一个地址
 	return nil
 }
 

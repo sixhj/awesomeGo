@@ -40,11 +40,12 @@ func main() {
 	}
 
 	data, err := proto.Marshal(req) // 序列化
+	fmt.Println("序列化的值", data)
 	if err != nil {
 		log.Fatal("marshaling error: ", err)
 	}
 
-	fmt.Println(string(data))
+	fmt.Println("序列化2", string(data))
 
 	infoReq := &pd.InfoReq{}
 
